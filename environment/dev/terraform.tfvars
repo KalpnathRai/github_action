@@ -8,6 +8,11 @@ rgs = {
     name     = "k-rai-rg-2"
     location = "centralindia"
   }
+
+    rai-3 = {
+    name     = "k-rai-rg-3"
+    location = "centralindia"
+  }
 }
 
 # vnets = {
