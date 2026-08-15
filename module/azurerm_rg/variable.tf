@@ -1,0 +1,12 @@
+variable "resource_groups" {}
+
+
+
+
+
+
+
+
+
+
+
