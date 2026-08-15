@@ -24,14 +24,14 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./environment
+        working-directory: ./github_action
 
       - name: Terraform Validate
         run: terraform validate
-        working-directory: ./environment
+        working-directory: ./github_action
 
       - name: Terraform Plan
-        working-directory: ./environment
+        working-directory: ./github_action
         run: terraform plan -var-file="terraform.tfvars" -out=tfplan -input=false
 
       - name: Upload Plan Artifact
@@ -39,9 +39,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: tfplan
-          path: ./environment/tfplan
+          path: ./github_action/tfplan
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve tfplan
-        working-directory: ./environment
+        working-directory: ./github_action
